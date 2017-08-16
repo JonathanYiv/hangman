@@ -62,4 +62,6 @@ class GameBoard
 
 3. This project is one of several games I have created for The Odin Project, and I am especially proud of this one because I feel it divides things into smaller chunks and feels more organized than the previous few. 
 
-4. All in all, this was a fun project that was low to moderately challenging, but very exciting in terms of using serialization to 'save' the state of the game.
+4. If I were to add more features, I would probably have the script display a list of saved games and their respective word lengths when prompted to save/load a game. However, my desire to keep pushing foward is stronger.
+
+5. All in all, this was a fun project that was low to moderately challenging, but very exciting in terms of using serialization to 'save' the state of the game.
