@@ -56,4 +56,10 @@ class GameBoard
 
 ## Post-Project Thoughts
 
-This project is currently incomplete.
+1. The hardest part was probably the file serialization process. I am still relatively unfamiliar with it and hope to get more practice going forward, although I know that -- in the long run -- databases are what will matter.
+
+2. Implementing the hangman game itself was very easy; it took me about an hour.
+
+3. This project is one of several games I have created for The Odin Project, and I am especially proud of this one because I feel it divides things into smaller chunks and feels more organized than the previous few. 
+
+4. All in all, this was a fun project that was low to moderately challenging, but very exciting in terms of using serialization to 'save' the state of the game.

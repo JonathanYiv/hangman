@@ -14,7 +14,7 @@ class Hangman
 		welcome
 		@gameboard.display
 		instructions
-		prompt_load
+		prompt_load if Dir.exist?("./saves")
 		turns
 	end
 
@@ -36,11 +36,11 @@ class Hangman
 		puts "\nThe computer will select a random 5-12 letter word."
 		puts "You can guess letters to figure the word out."
 		puts "You have 5 Guesses until the man is 'hung' and you lose!"
+		puts "Type 'save' on your turn to save the game for later."
 	end
 
 	def turns
 		while @lose == false && @win == false
-			prompt_save
 			turn
 			check_status
 		end
@@ -50,9 +50,11 @@ class Hangman
 
 	def get_guess
 		guess = gets.chomp
+		prompt_save if guess == "save"
 		until guess.downcase.match(/^[a-z]$/) && !@gameboard.all_guesses.include?(guess)
 			print "\nHmm.. something is wrong. Please type in a letter from A through Z that you haven't guessed yet.\n> "
 			guess = gets.chomp
+			prompt_save if guess == "save"
 		end
 		guess
 	end
@@ -106,19 +108,33 @@ class Hangman
 	end
 
 	def save
-		create_save
+		number = get_save_number
+		pre_save
+		create_save(number)
+		post_save
 		initialize
 		play
 	end
 
-	def create_save
+	def get_save_number
+		puts "\nWhat Save File would you like to save this game in?"
+		get_number
+	end
+
+	def create_save(number)
+		Dir.mkdir("./saves") if !Dir.exist?("./saves")
+		savefile = File.open("./saves/savefile#{number}.json", "w")
+		savefile.write(@gameboard.to_json)
+	end
+
+	def pre_save
 		puts "\nAlrighty.. saving this game..."
 		sleep(3)
 		puts "\nAlmost there..."
 		sleep(3)
-		Dir.mkdir("./saves") if !Dir.exist?("./saves")
-		savefile = File.open("./saves/savefile.json", "w")
-		savefile.write(@gameboard.to_json)
+	end
+
+	def post_save
 		puts "\nDone! Creating new game in 3.."
 		sleep(1)
 		puts "\n2.."
@@ -128,8 +144,23 @@ class Hangman
 	end
 
 	def load
-		@gameboard.load
+		@gameboard.load(get_load_number)
 		@gameboard.display
+	end
+
+	def get_load_number
+		puts "\nWhat Save File would you like to load?"
+		get_number
+	end
+
+	def get_number
+		print "Type 1, 2, or 3.\n> "
+		answer = gets.chomp
+		until answer.match(/[1-3]/) && File.exist?("./saves/savefile#{answer}.json")
+			print "\nTry again: 1, 2, or 3.\n> "
+			answer = gets.chomp
+		end
+		answer
 	end
 end
 

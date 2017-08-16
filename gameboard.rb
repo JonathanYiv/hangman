@@ -96,8 +96,8 @@ class GameBoard
 		{ "solution": @solution, "correct_guesses": @correct_guesses, "incorrect_guesses": @incorrect_guesses }.to_json
 	end
 
-	def load
-		json_save_data = File.read("./saves/savefile.json")
+	def load(number)
+		json_save_data = File.read("./saves/savefile#{number}.json")
 		data = JSON.parse(json_save_data)
 		@solution = data["solution"]
 		@correct_guesses = data["correct_guesses"]
