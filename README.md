@@ -66,4 +66,4 @@ class GameBoard
 
 5. All in all, this was a fun project that was low to moderately challenging, but very exciting in terms of using serialization to 'save' the state of the game.
 
-6. ALSO, for SOME REASON, even though I changed my Sublime Text 3 Tab Settings to make a Tab equivalent to 2 Spaces, when I upload to Github, it reverts to a full tab. I will try to find a fix...
+6. ALSO, for SOME REASON, even though I changed my Sublime Text 3 Tab Settings to make a Tab equivalent to 2 Spaces, when I upload to Github, it reverts to a full tab. Update: You can change the tab settings on Github directly. I will do it for future projects.
