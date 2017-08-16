@@ -4,7 +4,7 @@ Check out my command line version of the game [Hangman](https://en.wikipedia.org
 
 This is a project from [The Odin Project](https://www.theodinproject.com/courses/ruby-programming/lessons/file-i-o-and-serialization).
 
-![Hangman](/hangman.rb)
+![Hangman](/hangman.png)
 
 ## Installation
 
