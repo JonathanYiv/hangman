@@ -1,4 +1,5 @@
 require_relative 'gameboard.rb'
+require 'json'
 
 class Hangman
 	attr_accessor :gameboard, :lose, :win
@@ -13,7 +14,7 @@ class Hangman
 		welcome
 		@gameboard.display
 		instructions
-		#prompt_load
+		prompt_load
 		turns
 	end
 
@@ -39,6 +40,7 @@ class Hangman
 
 	def turns
 		while @lose == false && @win == false
+			prompt_save
 			turn
 			check_status
 		end
@@ -80,6 +82,7 @@ class Hangman
 		print "\nWant to play again? Yes or No.\n> "
 		initialize
 		play if get_answer == "yes"
+		exit
 	end
 
 	def get_answer
@@ -91,10 +94,42 @@ class Hangman
 		answer
 	end
 
+	def prompt_save
+		puts "\nDo you want to save this game for later?"
+		print "WARNING: This will overwrite any existing savefile!\n> "
+		save if get_answer == "yes"
+	end
+
+	def prompt_load
+		print "\nDo you want to load any previously existing games?\n> "
+		load if get_answer == "yes"
+	end
+
 	def save
+		create_save
+		initialize
+		play
+	end
+
+	def create_save
+		puts "\nAlrighty.. saving this game..."
+		sleep(3)
+		puts "\nAlmost there..."
+		sleep(3)
+		Dir.mkdir("./saves") if !Dir.exist?("./saves")
+		savefile = File.open("./saves/savefile.json", "w")
+		savefile.write(@gameboard.to_json)
+		puts "\nDone! Creating new game in 3.."
+		sleep(1)
+		puts "\n2.."
+		sleep(1)
+		puts "\n1.."
+		sleep(1)
 	end
 
 	def load
+		@gameboard.load
+		@gameboard.display
 	end
 end
 
