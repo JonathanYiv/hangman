@@ -13,7 +13,7 @@ Open your Terminal/Command Line. Navigate to the directory where your version wi
 ```
 $ git clone https://github.com/JonathanYiv/hangman.git
 $ cd hangman
-$ ruby hangman.rb
+$ ruby game.rb
 ```
 
 ## Pre-Project Thoughts

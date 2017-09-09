@@ -163,6 +163,3 @@ class Hangman
 		answer
 	end
 end
-
-game = Hangman.new
-game.play
