@@ -1,6 +1,7 @@
 require 'sinatra'
-require './hangman.rb'
+require 'sinatra/reloader' if development?
+require './lib/hangman.rb'
 
 get '/' do
-	"Hello World!"
+	erb :index, :locals => {:test => "test"}
 end

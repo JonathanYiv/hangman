@@ -49,11 +49,11 @@ class Hangman
 	end
 
 	def get_guess
-		guess = gets.chomp
+		guess = gets.chomp.downcase
 		prompt_save if guess == "save"
-		until guess.downcase.match(/^[a-z]$/) && !@gameboard.all_guesses.include?(guess)
+		until guess.match(/^[a-z]$/) && !@gameboard.all_guesses.include?(guess)
 			print "\nHmm.. something is wrong. Please type in a letter from A through Z that you haven't guessed yet.\n> "
-			guess = gets.chomp
+			guess = gets.chomp.downcase
 			prompt_save if guess == "save"
 		end
 		guess

@@ -8,7 +8,7 @@ class GameBoard
 	end
 
 	def random_solution
-		File.open("5desk.txt").readlines.collect { |word| word.strip.downcase }.select { |word| word.length > 4 && word.length < 13 }.sample.split("")
+		File.open("lib/5desk.txt").readlines.collect { |word| word.strip.downcase }.select { |word| word.length > 4 && word.length < 13 }.sample.split("")
 	end
 
 	def display
