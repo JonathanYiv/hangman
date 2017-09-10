@@ -1,0 +1,11 @@
+h1 {
+	font-size: 400%;
+}
+
+body {
+	margin-top: 10%;
+	font-family: 'Open Sans', sans-serif;
+	background-image: url("/images/graph.png");
+	width: 100%;
+	text-align: center;
+}
