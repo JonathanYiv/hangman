@@ -67,3 +67,37 @@ class GameBoard
 5. All in all, this was a fun project that was low to moderately challenging, but very exciting in terms of using serialization to 'save' the state of the game.
 
 6. ALSO, for SOME REASON, even though I changed my Sublime Text 3 Tab Settings to make a Tab equivalent to 2 Spaces, when I upload to Github, it reverts to a full tab. Update: You can change the tab settings on Github directly. I will do it for future projects.
+
+***
+
+# Hangman (Sinatra) Project
+
+Check out my web application of the game [Hangman](https://infinite-river-55923.herokuapp.com/) built with Sinatra!
+
+This is a follow-up project from [The Odin Project](https://www.theodinproject.com/courses/ruby-on-rails/lessons/sinatra-project).
+
+![Sinatra Hangman](/sinatrahangman.png)
+
+## Pre-Project Thoughts
+
+The vocabulary and relationships of Sinatra are very confusing to me right now.
+I do not feel confident in my skills regarding Sinatra at the moment.
+I will still press onward though.
+
+## Post-Project Thoughts
+
+1. There are very few resources on learning Sinatra on the web. This was the [best one](https://github.com/ISS-SOA/class-SOA-repo/wiki/resource-ruby-sinatra), an outline on GitHub of a variety of resources. In addition to the provided Odin Resources, these are other resources that filled in my gaps of knowledge:
+
+	1. [What is Rack?](http://blog.gauravchande.com/what-is-rack-in-ruby-rails) Various resources had mentioned Rack, Rack apps, Rack middleware, etc. So I wanted to know what it is. It's just a communication protocol between the server and the Ruby web application. The application respond to the 'call' method and take an environment hash as a parameter, then return an array with three elements:
+
+		1. The HTTP response code.
+
+		2. A Hash of headers.
+
+		3. The response body, which must respond to each.
+
+	2. ...
+
+2. I suffered from some strong procrastination urges during this project. I had to remind myself that breaking a large goal into a bunch of little goals is the best way to make progress.
+
+This project is currently incomplete...
