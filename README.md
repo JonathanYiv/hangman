@@ -96,8 +96,4 @@ I will still press onward though.
 
 		3. The response body, which must respond to each.
 
-	2. ...
-
 2. I suffered from some strong procrastination urges during this project. I had to remind myself that breaking a large goal into a bunch of little goals is the best way to make progress.
-
-This project is currently incomplete...
