@@ -16,7 +16,7 @@ end
 get '/start' do
 	update_variables
 
-	guess(params["letter"])
+	guess(params["letter"].downcase) if !params["letter"].nil?
 
 	display
 
@@ -58,7 +58,7 @@ helpers do
 	end
 
 	def guess(letter)
-		if !letter.nil? && !@guesses.include?(letter)
+		if !@guesses.include?(letter)
 			session[:guesses] << letter
 			session[:incorrect] += 1 if !@solution.include?(letter)
 			@incorrect = session[:incorrect]
